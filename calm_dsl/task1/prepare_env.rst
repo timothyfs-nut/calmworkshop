@@ -104,11 +104,11 @@ Optional: integration with VSCode
 
 Optionally you can integrate the running container with Visual Studio Code to allow lenting, follow the steps on this blog: https://www.nutanix.dev/2020/04/24/nutanix-calm-dsl-remote-container-development-part-1/
 
-.. |proj-icon| image:: ../images/projects_icon.png
-.. |docker-icon| image:: ../images/docker_icon.png
-.. |mktmgr-icon| image:: ../images/marketplacemanager_icon.png
-.. |mkt-icon| image:: ../images/marketplace_icon.png
-.. |bp-icon| image:: ../images/blueprints_icon.png
-.. |blueprints| image:: images/blueprints.png
-.. |applications| image:: images/blueprints.png
-.. |projects| image:: images/projects.png
+.. |proj-icon| image:: ../../images/projects_icon.png
+.. |docker-icon| image:: ../../images/docker_icon.png
+.. |mktmgr-icon| image:: ../../images/marketplacemanager_icon.png
+.. |mkt-icon| image:: ../../images/marketplace_icon.png
+.. |bp-icon| image:: ../../images/blueprints_icon.png
+.. |blueprints| image:: ../../images/blueprints.png
+.. |applications| image:: ../../images/blueprints.png
+.. |projects| image:: ../../images/projects.png

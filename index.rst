@@ -41,6 +41,10 @@
   calm_runbooks/endpoints/endpoints
   calm_runbooks/runbooks/runbooks
   calm_runbooks/optionallabs/blueprint
+  calm_runbooks/optionallabs/api_endpoint
+  calm_runbooks/appendix/glossary
+  calm_runbooks/appendix/otherstuff
+
 
 .. toctree::
   :maxdepth: 2
@@ -282,4 +286,4 @@ Nutanix Version Info
 - **AHV Version** - AHV 20170830.279 (5.10+)
 - **AOS Version** - 5.11
 - **PC Version** - 5.11
-- **Calm 3.0
+- **Calm** - 3.0
