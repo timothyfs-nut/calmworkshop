@@ -19,7 +19,10 @@ Make sure you have Docker running on your laptop. To verify that Docker engine i
   :name: verify-docker
   :caption: Check docker version
 
+  $ PWD
+
   $ docker --version
+
 
 If you don't have Docker installed, please refer to the installation instructions here:
 
@@ -76,9 +79,11 @@ Create a folder to hold you blueprint files for this lab.
   :name: run-container
   :caption: Run calm-dsl container
 
-  $ mkdir basic_blueprint
-  $ cd basic_blueprint
-  $ docker run -it -v $PWD:/root/blueprint ntnx/calm-dsl
+   $ docker run -it -v $PWD:/root/blueprint ntnx/calm-dsl
+
+   mkdir blueprint
+   cd blueprint
+   
 
 If everything is ok, you should be presented with container cli.
 
