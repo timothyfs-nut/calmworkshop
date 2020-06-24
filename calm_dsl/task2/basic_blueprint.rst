@@ -7,7 +7,7 @@ Task 2: Building a basic blueprint
 
 The purpose of this lab is create **LAMP** (Linux Apache MySql PHP) stack using calm-dsl. The following services need to be deployed:
 * **LB Tier:** HAProxy, count 1
-* **Web Tier:** Apahce/PHP, count: ask the user for the number of instance to deploy
+* **Web Tier:** Apache/PHP, count: ask the user for the number of instance to deploy
 * **DB Tier:** MySQL or MariaDB, count 1, request the user to input database password
 
 
@@ -21,7 +21,6 @@ Using your IDE (suggested Visual Studio Code) create an empty python file. Start
   :caption: LAMP blueprint
 
   from calm.dsl.builtins import SimpleDeployment, SimpleBlueprint
-
 
   def main():
     print(None)
@@ -56,6 +55,7 @@ Import read_local_file and create credentials object.
   from calm.dsl.builtins import SimpleDeployment, SimpleBlueprint
   from calm.dsl.builtins import read_local_file, basic_cred
 
+  # Password file located under './.local'
   CENTOS_PASSWD = read_local_file('centos')
   CENTOS_CRED = basic_cred('centos', CENTOS_PASSWD, name='CENTOS_CRED', default=True)
 
@@ -82,16 +82,18 @@ Assume all the services VM will have the same VM specs (OS, memory, disk and nic
   CENTOS_PASSWD = read_local_file('centos')
   CENTOS_CRED = basic_cred('centos', CENTOS_PASSWD, name='CENTOS_CRED', default=True)
 
-  CENTOS_IMAGE_SOURCE = 'https://cloud.centos.org/centos/8/x86_64/images/CentOS-8-ec2-8.1.1911-20200113.3.x86_64.qcow2'
-  CentosPackage = vm_disk_package( name='centos_disk',
-                                 config={'image': {'source': CENTOS_IMAGE_SOURCE}})
+  # Change values based on your calm environment
+  IMAGE_NAME = 'CentOS_7_Cloud'
+  NETWORK_NAME = 'default'
 
+  # Simple CentOS Guest + Customizations Coud Init + Image + Network
   class CentosVmResources(AhvVmResources):
+    
     memory = 4
     vCPUs = 2
-    cores_per_vCPU = 1
-    disks = [AhvVmDisk.Disk.Scsi.cloneFromVMDiskPackage(CentosPackage, bootable=True)]
-    nics = [AhvVmNic.DirectNic.ingress("RX-Automation")]
+    cores_per_vCPU = 2
+    disks = [AhvVmDisk.Disk.Scsi.cloneFromImageService(IMAGE_NAME, bootable=True)]
+    nics = [AhvVmNic.DirectNic.ingress("NETWORK_NAME")]
     guest_customization = AhvVmGC.CloudInit(
       config={
           'password': CENTOS_PASSWD,

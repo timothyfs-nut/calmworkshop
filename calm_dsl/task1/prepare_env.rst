@@ -32,7 +32,7 @@ If you don't have Docker installed, please refer to the installation instruction
 
 #. Install Docker Desktop for Mac, details and download are found here: https://docs.docker.com/docker-for-mac/
 
-#. Install Visual Sutdio Code, details can be found here: https://code.visualstudio.com/
+#. Install Visual Studio Code, details can be found here: https://code.visualstudio.com/
 
 .. note::
   Recommended extension to be added to Visual Studio Code, Click the **View** menu, select **Extensions**, then search for:
